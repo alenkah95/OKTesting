@@ -48,15 +48,18 @@ public class Steps {
         return (myPage.getAboutMyInfo());
     }
 
-    public void goToFriendPage()
-    {
+    public void goToFriendPage() {
         FriendPage friendPage = new FriendPage(driver);
         friendPage.clickOnFriendPage();
     }
-    public  boolean isFriendPageIn()
-    {
+
+    public boolean isFriendPageIn() {
         FriendPage friendPage = new FriendPage(driver);
         return (friendPage.getAllFriend());
+    }
+
+    public void searchObject() {
+
     }
 }
 

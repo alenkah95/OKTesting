@@ -34,12 +34,12 @@ public class Tests {
     }
 
     @Test
-public void cFriendPage()
-    {
+    public void cFriendPage() {
         steps.loginOK(USERNAME, PASSWORD);
         steps.goToFriendPage();
         Assert.assertTrue(steps.isFriendPageIn());
     }
+
     @AfterMethod(description = "Stop Browser")
     public void stopBrowser() {
         steps.closeDriver();
