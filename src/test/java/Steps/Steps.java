@@ -3,6 +3,7 @@ package Steps;
 import PageObject.FriendPage;
 import PageObject.LoginPage;
 import PageObject.MyPage;
+import PageObject.SearchPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -18,8 +19,8 @@ public class Steps {
 
     public void initBrowser() {
         driver = new FirefoxDriver();
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
         logger.info("Browser started");
     }
 
@@ -58,8 +59,19 @@ public class Steps {
         return (friendPage.getAllFriend());
     }
 
-    public void searchObject() {
+    public void searchObject(String searchoO) {
+        SearchPage searchPage = new SearchPage(driver);
+        searchPage.search(searchoO);
+    }
 
+    public boolean isSearchPageIn() {
+        SearchPage searchPage = new SearchPage(driver);
+        return (searchPage.getUserSearch());
+    }
+
+    public void addSearchFriend() {
+        SearchPage searchPage = new SearchPage(driver);
+        searchPage.addSearch();
     }
 }
 

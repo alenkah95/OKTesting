@@ -12,6 +12,9 @@ import org.testng.annotations.Test;
 public class Tests {
     private final String USERNAME = "alenkah95Testing";
     private final String PASSWORD = "alenkah95";
+    private final String SEARCHNAME = "Алёна Худницкая";
+    @Test
+    public void e
     private Steps steps;
 
     @BeforeMethod(description = "Init browser")
@@ -38,6 +41,13 @@ public class Tests {
         steps.loginOK(USERNAME, PASSWORD);
         steps.goToFriendPage();
         Assert.assertTrue(steps.isFriendPageIn());
+    }
+
+    @Test
+    public void dSearchPage() {
+        steps.loginOK(USERNAME, PASSWORD);
+        steps.searchObject(SEARCHNAME);
+        Assert.assertTrue(steps.isSearchPageIn());
     }
 
     @AfterMethod(description = "Stop Browser")
