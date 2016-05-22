@@ -25,7 +25,7 @@ public class LoginPage extends AbstractPage {
     @FindBy(id = "field_password")
     private WebElement inputPassword;
 
-    @FindBy(xpath = "//input[@value='Войти']")
+    @FindBy(xpath = ".//*[@id='loginContentBlock']/form/div[4]/input")
     private WebElement linkEnter;
 
     @FindBy(xpath = ".//*[@id='hook_Block_MiddleColumnTopCardUser']/div/div/div[1]/div/span[1]/a/span")

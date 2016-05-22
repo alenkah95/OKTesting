@@ -37,31 +37,63 @@ public class Tests {
     }
 
     @Test
-    public void cFriendPage() {
-        steps.loginOK(USERNAME, PASSWORD);
-        steps.goToFriendPage();
-        Assert.assertTrue(steps.isFriendPageIn());
-    }
-
-    @Test
-    public void dSearchUser() {
+    public void cSearchUser() {
         steps.loginOK(USERNAME, PASSWORD);
         steps.searchObject(SEARCHNAME);
         Assert.assertTrue(steps.isSearchPageIn());
     }
 
     @Test
-    public void eAddUser() {
+    public void dAddUser() {
         steps.loginOK(USERNAME, PASSWORD);
         steps.addFriend();
         Assert.assertTrue(steps.isUserAddIn());
     }
 
     @Test
-    public void fSendMessage() {
+    public void eSendMessage() {
         steps.loginOK(USERNAME, PASSWORD);
         steps.sendMessage(MESSAGE);
+        Assert.assertTrue(steps.isMessageSent());
     }
+
+    @Test
+    public void fSeePhoto() {
+        steps.loginOK(USERNAME, PASSWORD);
+        steps.seeUserPhoto();
+        Assert.assertTrue(steps.isPhotoSee());
+    }
+
+    @Test
+    public void gSetKlass() {
+        steps.loginOK(USERNAME, PASSWORD);
+        steps.seeUserPhoto();
+        steps.setKlassToPhoto();
+        Assert.assertTrue(steps.isKlassSet());
+    }
+
+    @Test
+    public void hSetMark() {
+        steps.loginOK(USERNAME, PASSWORD);
+        steps.seeUserPhoto();
+        steps.setMarkToPhoto();
+        Assert.assertTrue(steps.isMarkSet());
+    }
+
+    @Test
+    public void iSeeNotifications() {
+        steps.loginOK(USERNAME, PASSWORD);
+        steps.seeNotifications();
+        Assert.assertTrue(steps.isNotificationSee());
+    }
+
+    @Test
+    public void jLogOut() {
+        steps.loginOK(USERNAME, PASSWORD);
+        steps.logOut();
+        Assert.assertTrue(steps.isLogOUt());
+    }
+
 
     @AfterMethod(description = "Stop Browser")
     public void stopBrowser() {

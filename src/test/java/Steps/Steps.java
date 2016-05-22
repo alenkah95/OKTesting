@@ -46,16 +46,6 @@ public class Steps {
         return (myPage.getAboutMyInfo());
     }
 
-    public void goToFriendPage() {
-        FriendPage friendPage = new FriendPage(driver);
-        friendPage.clickOnFriendPage();
-    }
-
-    public boolean isFriendPageIn() {
-        FriendPage friendPage = new FriendPage(driver);
-        return (friendPage.getAllFriend());
-    }
-
     public void searchObject(String searchoO) {
         SearchPage searchPage = new SearchPage(driver);
         searchPage.openPage();
@@ -79,9 +69,66 @@ public class Steps {
     }
 
     public void sendMessage(String mText) {
-        MessagePage messagePage = new MessagePage(driver);
-        messagePage.openPage();
-        messagePage.sendMessage(mText);
+        UserPage userPage = new UserPage(driver);
+        userPage.openPage();
+        userPage.sendMessage(mText);
     }
+
+    public boolean isMessageSent() {
+        UserPage userPage = new UserPage(driver);
+        return (userPage.getMessageText());
+    }
+
+    public void seeUserPhoto() {
+        UserPage userPage = new UserPage(driver);
+        userPage.seePhoto();
+    }
+
+    public boolean isPhotoSee() {
+        UserPage userPage = new UserPage(driver);
+        return (userPage.getImgPhoto());
+    }
+
+    public void setKlassToPhoto() {
+        UserPage userPage = new UserPage(driver);
+        userPage.setKlassToPhoto();
+    }
+
+    public boolean isKlassSet() {
+        UserPage userPage = new UserPage(driver);
+        return (userPage.getKlassBtn());
+    }
+
+    public void setMarkToPhoto() {
+        UserPage userPage = new UserPage(driver);
+        userPage.setMarkToPhoto();
+    }
+
+    public boolean isMarkSet() {
+        UserPage userPage = new UserPage(driver);
+        return (userPage.getMarkBtn());
+    }
+
+    public void seeNotifications() {
+        MyPage myPage = new MyPage(driver);
+        myPage.seeNotifications();
+    }
+
+    public boolean isNotificationSee() {
+        MyPage myPage = new MyPage(driver);
+        return (myPage.getNotificationsTitle());
+    }
+
+    public void logOut() {
+        LogoutPage logoutPage = new LogoutPage(driver);
+        logoutPage.logout();
+    }
+
+    public boolean isLogOUt() {
+        LogoutPage logoutPage = new LogoutPage(driver);
+        return (logoutPage.getEnterHeader());
+    }
+
+
 }
 

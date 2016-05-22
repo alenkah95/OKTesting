@@ -14,7 +14,13 @@ public class MyPage extends AbstractPage {
     @FindBy(xpath = ".//*[@id='hook_Block_MiddleColumnTopCardUser']/div/div/div[1]/div/span[1]/a/span")
     private WebElement myPageId;
 
-    @FindBy (xpath = ".//*[@id='aboutPanel']/div[1]/div[1]")
+    @FindBy(id = "ntf_toolbar_button")
+    private WebElement notificationsBtn;
+
+    @FindBy(id = "hook_Block_NotificationsLayerTitle")
+    private WebElement notificationsTitle;
+
+    @FindBy(id = "aboutPanel")
     private WebElement aboutMy;
 
     public MyPage(WebDriver driver) {
@@ -26,6 +32,10 @@ public class MyPage extends AbstractPage {
         myPageId.click();
     }
 
+    public void seeNotifications() {
+        notificationsBtn.click();
+    }
+
     @Override
     public void openPage() {
         driver.navigate().to(BASE_URL);
@@ -34,5 +44,9 @@ public class MyPage extends AbstractPage {
 
     public boolean getAboutMyInfo() {
         return aboutMy.isDisplayed();
+    }
+
+    public boolean getNotificationsTitle() {
+        return (notificationsTitle.isDisplayed());
     }
 }
