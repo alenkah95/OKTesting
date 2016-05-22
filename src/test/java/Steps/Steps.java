@@ -1,9 +1,6 @@
 package Steps;
 
-import PageObject.FriendPage;
-import PageObject.LoginPage;
-import PageObject.MyPage;
-import PageObject.SearchPage;
+import PageObject.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -61,6 +58,7 @@ public class Steps {
 
     public void searchObject(String searchoO) {
         SearchPage searchPage = new SearchPage(driver);
+        searchPage.openPage();
         searchPage.search(searchoO);
     }
 
@@ -69,9 +67,21 @@ public class Steps {
         return (searchPage.getUserSearch());
     }
 
-    public void addSearchFriend() {
-        SearchPage searchPage = new SearchPage(driver);
-        searchPage.addSearch();
+    public void addFriend() {
+        UserPage userPage = new UserPage(driver);
+        userPage.openPage();
+        userPage.addUser();
+    }
+
+    public boolean isUserAddIn() {
+        UserPage userPage = new UserPage(driver);
+        return (userPage.getUserAdd());
+    }
+
+    public void sendMessage(String mText) {
+        MessagePage messagePage = new MessagePage(driver);
+        messagePage.openPage();
+        messagePage.sendMessage(mText);
     }
 }
 

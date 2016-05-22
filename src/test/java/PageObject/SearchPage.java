@@ -9,22 +9,21 @@ import org.openqa.selenium.support.PageFactory;
  * Created by Alena on 17.05.2016.
  */
 public class SearchPage extends AbstractPage {
-    private final String BASE_URL = "https://ok.ru/";
-
-    @FindBy(id = "field_query")
-    private WebElement searchField;
-
-    @FindBy(id = "lsBtn")
-    private WebElement searchButton;
+    private final String BASE_URL = "https://ok.ru/search";
 
     @FindBy(id = "query_usersearch")
-    private WebElement searchUser;
+    private WebElement searchField;
+
+    //@FindBy(id = "lsBtn")
+    //private WebElement searchButton;
 
     @FindBy(xpath = ".//*[@id='locationItems']/li[2]/span")
     private WebElement locationItem;
 
-    @FindBy(xpath = ".//*[@id='gs_result_list']/div[1]/div/div/div[2]/div[1]/div[1]/a")
-    private WebElement findUser;
+    @FindBy(id = "gs_result_list")
+    private WebElement searchUser;
+
+
 
     public SearchPage(WebDriver driver) {
         super(driver);
@@ -39,12 +38,8 @@ public class SearchPage extends AbstractPage {
 
     public void search(String searchobject) {
         searchField.sendKeys(searchobject);
-        searchButton.click();
+        //searchButton.click();
         locationItem.click();
-    }
-
-    public void addSearch() {
-        searchUser.click();
     }
 
     public boolean getUserSearch() {
