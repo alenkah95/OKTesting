@@ -1,9 +1,6 @@
 package Steps;
 
-import PageObject.FriendPage;
-import PageObject.LoginPage;
-import PageObject.MyPage;
-import PageObject.SearchPage;
+import PageObject.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -70,8 +67,13 @@ public class Steps {
     }
 
     public void addSearchFriend() {
-        SearchPage searchPage = new SearchPage(driver);
-        searchPage.addSearch();
+        UserPage userPage = new UserPage(driver);
+        userPage.addUser();
+    }
+
+    public boolean isUserAddIn() {
+        UserPage userPage = new UserPage(driver);
+        return (userPage.getUserAdd());
     }
 }
 

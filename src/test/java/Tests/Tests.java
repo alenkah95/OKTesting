@@ -13,8 +13,7 @@ public class Tests {
     private final String USERNAME = "alenkah95Testing";
     private final String PASSWORD = "alenkah95";
     private final String SEARCHNAME = "Алёна Худницкая";
-    @Test
-    public void e
+
     private Steps steps;
 
     @BeforeMethod(description = "Init browser")
@@ -48,6 +47,14 @@ public class Tests {
         steps.loginOK(USERNAME, PASSWORD);
         steps.searchObject(SEARCHNAME);
         Assert.assertTrue(steps.isSearchPageIn());
+    }
+
+    @Test
+    public void eUserPage() {
+        steps.loginOK(USERNAME, PASSWORD);
+        steps.searchObject(SEARCHNAME);
+        steps.addSearchFriend();
+        Assert.assertTrue(steps.isUserAddIn());
     }
 
     @AfterMethod(description = "Stop Browser")
