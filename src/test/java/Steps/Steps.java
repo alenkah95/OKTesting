@@ -36,16 +36,6 @@ public class Steps {
         return (loginPage.getLoggedInUserName());
     }
 
-    public void goToMyPage() {
-        MyPage myPage = new MyPage(driver);
-        myPage.clickOnMyPage();
-    }
-
-    public boolean isMyPageIn() {
-        MyPage myPage = new MyPage(driver);
-        return (myPage.getAboutMyInfo());
-    }
-
     public void searchObject(String searchoO) {
         SearchPage searchPage = new SearchPage(driver);
         searchPage.openPage();
@@ -81,6 +71,7 @@ public class Steps {
 
     public void seeUserPhoto() {
         UserPage userPage = new UserPage(driver);
+        userPage.openPage();
         userPage.seePhoto();
     }
 
@@ -91,6 +82,7 @@ public class Steps {
 
     public void setKlassToPhoto() {
         UserPage userPage = new UserPage(driver);
+        userPage.openPage();
         userPage.setKlassToPhoto();
     }
 
@@ -101,6 +93,7 @@ public class Steps {
 
     public void setMarkToPhoto() {
         UserPage userPage = new UserPage(driver);
+        userPage.openPage();
         userPage.setMarkToPhoto();
     }
 
@@ -109,6 +102,15 @@ public class Steps {
         return (userPage.getMarkBtn());
     }
 
+    public void goToMyPage() {
+        MyPage myPage = new MyPage(driver);
+        myPage.clickOnMyPage();
+    }
+
+    public boolean isMyPageIn() {
+        MyPage myPage = new MyPage(driver);
+        return (myPage.getAboutMyInfo());
+    }
     public void seeNotifications() {
         MyPage myPage = new MyPage(driver);
         myPage.seeNotifications();

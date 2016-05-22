@@ -5,17 +5,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.logging.Logger;
+
 /**
  * Created by Alena on 17.05.2016.
  */
 public class SearchPage extends AbstractPage {
+    private final Logger logger = Logger.getLogger(LoginPage.class.getName());
     private final String BASE_URL = "https://ok.ru/search";
 
     @FindBy(id = "query_usersearch")
     private WebElement searchField;
-
-    //@FindBy(id = "lsBtn")
-    //private WebElement searchButton;
 
     @FindBy(xpath = ".//*[@id='locationItems']/li[2]/span")
     private WebElement locationItem;
@@ -32,13 +32,14 @@ public class SearchPage extends AbstractPage {
     @Override
     public void openPage() {
         driver.navigate().to(BASE_URL);
-        //logger.info("Login page opened");
+        logger.info("Search page opened");
     }
 
     public void search(String searchobject) {
         searchField.sendKeys(searchobject);
-        //searchButton.click();
         locationItem.click();
+
+        logger.info("User is searched");
     }
 
     public boolean getUserSearch() {

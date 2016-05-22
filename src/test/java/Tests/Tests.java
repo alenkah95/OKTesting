@@ -29,71 +29,70 @@ public class Tests {
         Assert.assertTrue(steps.isLoggedIn());
     }
 
-    @Test(description = "Go to MyPage")
-    public void bMyPage() {
-        steps.loginOK(USERNAME, PASSWORD);
-        steps.goToMyPage();
-        Assert.assertTrue(steps.isMyPageIn());
-    }
-
-    @Test
-    public void cSearchUser() {
+    @Test(description = "Search user by name")
+    public void bSearchUser() {
         steps.loginOK(USERNAME, PASSWORD);
         steps.searchObject(SEARCHNAME);
         Assert.assertTrue(steps.isSearchPageIn());
     }
 
-    @Test
-    public void dAddUser() {
+    @Test(description = "Add user to friends")
+    public void cAddUser() {
         steps.loginOK(USERNAME, PASSWORD);
         steps.addFriend();
         Assert.assertTrue(steps.isUserAddIn());
     }
 
-    @Test
-    public void eSendMessage() {
+    @Test(description = "Send message to user")
+    public void dSendMessage() {
         steps.loginOK(USERNAME, PASSWORD);
         steps.sendMessage(MESSAGE);
         Assert.assertTrue(steps.isMessageSent());
     }
 
-    @Test
-    public void fSeePhoto() {
+    @Test(description = "See user photo")
+    public void eSeePhoto() {
         steps.loginOK(USERNAME, PASSWORD);
         steps.seeUserPhoto();
         Assert.assertTrue(steps.isPhotoSee());
     }
 
-    @Test
-    public void gSetKlass() {
+    @Test(description = "Set Klass to user photo")
+    public void fSetKlass() {
         steps.loginOK(USERNAME, PASSWORD);
         steps.seeUserPhoto();
         steps.setKlassToPhoto();
         Assert.assertTrue(steps.isKlassSet());
     }
 
-    @Test
-    public void hSetMark() {
+    @Test(description = "Set Mark to user photo")
+    public void gSetMark() {
         steps.loginOK(USERNAME, PASSWORD);
         steps.seeUserPhoto();
         steps.setMarkToPhoto();
         Assert.assertTrue(steps.isMarkSet());
     }
 
-    @Test
+    @Test(description = "Go to MyPage")
+    public void hMyPage() {
+        steps.loginOK(USERNAME, PASSWORD);
+        steps.goToMyPage();
+        Assert.assertTrue(steps.isMyPageIn());
+    }
+
+    @Test(description = "See my notifications")
     public void iSeeNotifications() {
         steps.loginOK(USERNAME, PASSWORD);
         steps.seeNotifications();
         Assert.assertTrue(steps.isNotificationSee());
     }
 
-    @Test
+    @Test(description = "Logout from OK")
     public void jLogOut() {
         steps.loginOK(USERNAME, PASSWORD);
         steps.logOut();
         Assert.assertTrue(steps.isLogOUt());
     }
-
 
     @AfterMethod(description = "Stop Browser")
     public void stopBrowser() {
