@@ -32,20 +32,22 @@ public class UserPage extends AbstractPage {
     @FindBy(xpath = ".//*[@id='hook_Block_MiddleColumnTopCard_MenuFriend']/div/a[3]")
     private WebElement photosBtn;
 
-    @FindBy(id = "img_817020919846")
+    @FindBy(id = "img_815980485158")
     private WebElement idPhoto;
 
     @FindBy(id = "hook_Block_KlassOverPLB")
     private WebElement klassBtn;
 
-    @FindBy(id = "hook_Block_PopLayerViewFriendPhotoRating")
+    @FindBy(xpath = "//*[@id='hook_Block_PopLayerViewFriendPhotoRating']/a[2]")
     private WebElement markBtn;
 
-
-    @FindBy(xpath = ".//*[@id='action_menu_friendship_request_sent_a']/span")
+    @FindBy(xpath = "//*[@id='action_menu_friendship_request_sent_a']/span")
     private WebElement userAdd;
 
-    @FindBy(id = "__plpcte_targe")
+    @FindBy(xpath = "//*[@id='hook_Block_PopLayerViewFriendPhotoRating']/span[2]")
+    private WebElement setMark;
+
+    @FindBy(xpath = "//*[@id='__plpcte_target']")
     private WebElement imgPhoto;
 
     public UserPage(WebDriver driver) {
@@ -84,7 +86,7 @@ public class UserPage extends AbstractPage {
     }
 
     public void setMarkToPhoto() {
-        markBtn.click();
+        //markBtn.click();
         logger.info("Mark 5");
     }
 
@@ -104,7 +106,7 @@ public class UserPage extends AbstractPage {
         return klassBtn.isDisplayed();
     }
 
-    public boolean getMarkBtn() {
-        return markBtn.isDisplayed();
+    public boolean getSetMark() {
+        return setMark.isDisplayed();
     }
 }

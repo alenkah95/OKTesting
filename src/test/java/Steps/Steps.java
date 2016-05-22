@@ -82,7 +82,6 @@ public class Steps {
 
     public void setKlassToPhoto() {
         UserPage userPage = new UserPage(driver);
-        userPage.openPage();
         userPage.setKlassToPhoto();
     }
 
@@ -93,13 +92,12 @@ public class Steps {
 
     public void setMarkToPhoto() {
         UserPage userPage = new UserPage(driver);
-        userPage.openPage();
         userPage.setMarkToPhoto();
     }
 
     public boolean isMarkSet() {
         UserPage userPage = new UserPage(driver);
-        return (userPage.getMarkBtn());
+        return (userPage.getSetMark());
     }
 
     public void goToMyPage() {
@@ -111,6 +109,7 @@ public class Steps {
         MyPage myPage = new MyPage(driver);
         return (myPage.getAboutMyInfo());
     }
+
     public void seeNotifications() {
         MyPage myPage = new MyPage(driver);
         myPage.seeNotifications();
