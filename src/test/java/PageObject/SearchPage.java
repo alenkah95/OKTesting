@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  * Created by Alena on 17.05.2016.
  */
 public class SearchPage extends AbstractPage {
-    private final Logger logger = Logger.getLogger(LoginPage.class.getName());
+    private final Logger logger = Logger.getLogger(SearchPage.class.getName());
     private final String BASE_URL = "https://ok.ru/search";
 
     @FindBy(id = "query_usersearch")
@@ -42,7 +42,7 @@ public class SearchPage extends AbstractPage {
         logger.info("User is searched");
     }
 
-    public boolean getUserSearch() {
+    public boolean isUserSearchDisplay() {
         return searchUser.isDisplayed();
     }
 }

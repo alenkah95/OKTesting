@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  * Created by Alena on 22.05.2016.
  */
 public class LogoutPage extends AbstractPage {
-    private final Logger logger = Logger.getLogger(LoginPage.class.getName());
+    private final Logger logger = Logger.getLogger(LogoutPage.class.getName());
     private final String BASE_URL = "https://ok.ru/";
 
     @FindBy(xpath = ".//*[@id='mailRuToolbar']/table/tbody/tr/td[2]/a[2]")
@@ -41,7 +41,7 @@ public class LogoutPage extends AbstractPage {
         logger.info("User Logout");
     }
 
-    public boolean getEnterHeader() {
+    public boolean isEnterHeaderDisplay() {
         return enterHeader.isDisplayed();
     }
 

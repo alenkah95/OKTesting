@@ -33,7 +33,7 @@ public class Steps {
 
     public boolean isLoggedIn() {
         LoginPage loginPage = new LoginPage(driver);
-        return (loginPage.getLoggedInUserName());
+        return (loginPage.isLoggedInUserNameDisplay());
     }
 
     public void searchObject(String searchoO) {
@@ -44,7 +44,7 @@ public class Steps {
 
     public boolean isSearchPageIn() {
         SearchPage searchPage = new SearchPage(driver);
-        return (searchPage.getUserSearch());
+        return (searchPage.isUserSearchDisplay());
     }
 
     public void addFriend() {
@@ -55,7 +55,7 @@ public class Steps {
 
     public boolean isUserAddIn() {
         UserPage userPage = new UserPage(driver);
-        return (userPage.getUserAdd());
+        return (userPage.isUserAddDisplay());
     }
 
     public void sendMessage(String mText) {
@@ -66,7 +66,7 @@ public class Steps {
 
     public boolean isMessageSent() {
         UserPage userPage = new UserPage(driver);
-        return (userPage.getMessageText());
+        return (userPage.isMessageTextDisplay());
     }
 
     public void seeUserPhoto() {
@@ -77,7 +77,7 @@ public class Steps {
 
     public boolean isPhotoSee() {
         UserPage userPage = new UserPage(driver);
-        return (userPage.getImgPhoto());
+        return (userPage.isImgPhotoDisplay());
     }
 
     public void setKlassToPhoto() {
@@ -87,7 +87,7 @@ public class Steps {
 
     public boolean isKlassSet() {
         UserPage userPage = new UserPage(driver);
-        return (userPage.getKlassBtn());
+        return (userPage.isKlassBtnDisplay());
     }
 
     public void setMarkToPhoto() {
@@ -97,7 +97,7 @@ public class Steps {
 
     public boolean isMarkSet() {
         UserPage userPage = new UserPage(driver);
-        return (userPage.getSetMark());
+        return (userPage.isSetMarkDisplay());
     }
 
     public void goToMyPage() {
@@ -107,7 +107,7 @@ public class Steps {
 
     public boolean isMyPageIn() {
         MyPage myPage = new MyPage(driver);
-        return (myPage.getAboutMyInfo());
+        return (myPage.isAboutMyInfoDisplay());
     }
 
     public void seeNotifications() {
@@ -117,7 +117,7 @@ public class Steps {
 
     public boolean isNotificationSee() {
         MyPage myPage = new MyPage(driver);
-        return (myPage.getNotificationsTitle());
+        return (myPage.isNotificationsTitleDisplay());
     }
 
     public void logOut() {
@@ -127,7 +127,7 @@ public class Steps {
 
     public boolean isLogOUt() {
         LogoutPage logoutPage = new LogoutPage(driver);
-        return (logoutPage.getEnterHeader());
+        return (logoutPage.isEnterHeaderDisplay());
     }
 
 

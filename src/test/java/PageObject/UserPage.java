@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  * Created by Alena on 22.05.2016.
  */
 public class UserPage extends AbstractPage {
-    private final Logger logger = Logger.getLogger(LoginPage.class.getName());
+    private final Logger logger = Logger.getLogger(UserPage.class.getName());
     private final String BASE_URL = "https://ok.ru/profile/354527805478";
 
     @FindBy(xpath = ".//*[@id='action_menu_add_friend']/a")
@@ -90,23 +90,23 @@ public class UserPage extends AbstractPage {
         logger.info("Mark 5");
     }
 
-    public boolean getUserAdd() {
+    public boolean isUserAddDisplay() {
         return closeAddFriend.isDisplayed();
     }
 
-    public boolean getMessageText() {
+    public boolean isMessageTextDisplay() {
         return messageText.isDisplayed();
     }
 
-    public boolean getImgPhoto() {
+    public boolean isImgPhotoDisplay() {
         return imgPhoto.isDisplayed();
     }
 
-    public boolean getKlassBtn() {
+    public boolean isKlassBtnDisplay() {
         return klassBtn.isDisplayed();
     }
 
-    public boolean getSetMark() {
+    public boolean isSetMarkDisplay() {
         return setMark.isDisplayed();
     }
 }

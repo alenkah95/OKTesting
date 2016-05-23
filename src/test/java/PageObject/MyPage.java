@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  * Created by Alena on 17.05.2016.
  */
 public class MyPage extends AbstractPage {
-    private final Logger logger = Logger.getLogger(LoginPage.class.getName());
+    private final Logger logger = Logger.getLogger(MyPage.class.getName());
     private final String BASE_URL = "https://ok.ru/";
 
     @FindBy(xpath = ".//*[@id='hook_Block_MiddleColumnTopCardUser']/div/div/div[1]/div/span[1]/a/span")
@@ -46,11 +46,12 @@ public class MyPage extends AbstractPage {
         notificationsBtn.click();
         logger.info("Notification see");
     }
-    public boolean getAboutMyInfo() {
+
+    public boolean isAboutMyInfoDisplay() {
         return aboutMy.isDisplayed();
     }
 
-    public boolean getNotificationsTitle() {
+    public boolean isNotificationsTitleDisplay() {
         return (notificationsTitle.isDisplayed());
     }
 }

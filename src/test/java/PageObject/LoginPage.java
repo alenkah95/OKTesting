@@ -51,8 +51,7 @@ public class LoginPage extends AbstractPage {
         logger.info("Login performed");
     }
 
-
-    public boolean getLoggedInUserName() {
+    public boolean isLoggedInUserNameDisplay() {
         return linkLoggedInUser.isDisplayed();
     }
 }
