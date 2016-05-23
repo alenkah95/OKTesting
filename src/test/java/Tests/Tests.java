@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class Tests {
     private final String USERNAME = "alenkah95Testing";
     private final String PASSWORD = "alenkah95";
-    private final String SEARCHNAME = "РђР»С‘РЅР° РҐСѓРґРЅРёС†РєР°СЏ";
+    private final String SEARCHNAME = "Алёна Худницкая";
     private final String MESSAGE = "TEST";
 
     private Steps steps;
